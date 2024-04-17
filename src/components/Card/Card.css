@@ -1,0 +1,41 @@
+.card {
+    width: 352px;
+    height: 454px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+
+    font-family: Bebas Neue;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    color: #313037;
+
+}
+.card__img {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 264px;
+    background-color: #D7E4FD;
+}
+.card__img > img {
+    width: 226px;
+    height: 264px;
+}
+
+.card__title {
+    height: 64px;
+    margin-top: 20px;
+}
+
+.card__subtitle {
+    height: 54px;
+    font-family: Raleway;
+    font-weight: 400;
+    font-size: 16px;
+    line-height: 24px;
+    color: #A8A8A8;
+    overflow: hidden;
+}
