@@ -12,9 +12,9 @@ export const fetchNewBooks = createAsyncThunk(
 
 export const fetchAllBooks = createAsyncThunk (
     'bookstore/fetchAllBooks',
-    async function (searchStr, {rejectWithValue}) {
+    async function ({searchStr, pageNmb}: {searchStr: string, pageNmb: string}, {rejectWithValue}) {
         try {
-            const response = await fetch(`https://api.itbook.store/1.0/search/${searchStr}}`)
+            const response = await fetch(`https://api.itbook.store/1.0/search/${searchStr}/${pageNmb}}`)
 
             if (!response.ok) {
                 throw new Error("Ошибочка вышла")
@@ -39,23 +39,29 @@ const bookstoreSlice = createSlice({
         newBooks: [],
         allBooks: [],
         bookSearch: '',
-        status: null,
-        error: null,
+        currentPage: '1',
+        status: '',
+        errors: '',
     },
 
     reducers: {
-        setBookSearch: (state, action) => {
+        setBookSearch: (state: any, action) => {
             state.bookSearch = action.payload;
         }
     },
 
     extraReducers: (builder) => {
-        builder.addCase(fetchNewBooks.fulfilled, (state, action) => {
+        builder.addCase(fetchNewBooks.fulfilled, (state: any, action) => {
             state.newBooks = action.payload
         })
 
-        .addCase(fetchAllBooks.fulfilled, (state, action) => {
+        .addCase(fetchAllBooks.fulfilled, (state: any, action) => {
+            state.status = 'resolved'
             state.allBooks = action.payload
+        })
+        .addCase(fetchAllBooks.rejected, (state: any, action) => {
+            state.status = 'rejected'
+            state.errors = action.payload
         })
     },
 })

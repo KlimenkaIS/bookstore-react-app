@@ -1,13 +1,14 @@
 import './PageMain.css'
 import {  useEffect } from 'react';
-import { fetchNewBooks } from '../slices/bookstoreSlice';
-import Card from '../components/Card/Card';
+import { fetchNewBooks } from '../../slices/bookstoreSlice';
+import Card from '../../components/Card/Card';
 import { useDispatch, useSelector } from 'react-redux';
-import { AppDispatch } from '../store/store';
+import { AppDispatch } from '../../store/store';
 
 function PageMain() {
     const dispatch = useDispatch<AppDispatch>()
-    const books = useSelector((state: any) => state.bookstore.newBooks)
+    const booksNew = useSelector((state: any) => state.bookstore.newBooks)
+
 
 
     useEffect(() => {
@@ -19,7 +20,7 @@ function PageMain() {
     return (
         <>
             <div className="page-main">
-                {books.books?.map((item: any) => (
+                {booksNew.books?.map((item: any) => (
                     <Card key={item.isbn13} 
                         img={item.image}
                         title={item.title}

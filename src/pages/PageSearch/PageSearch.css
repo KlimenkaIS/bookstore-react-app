@@ -1,0 +1,7 @@
+.page-search {
+    width: 1120px;
+    margin: 0 auto;
+    display: grid;
+    grid-template-columns: repeat(3, auto);
+    row-gap: 48px;
+}
