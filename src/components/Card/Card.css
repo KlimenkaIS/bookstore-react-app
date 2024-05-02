@@ -4,6 +4,7 @@
     display: flex;
     flex-direction: column;
     justify-content: space-between;
+    position: relative;
 
     font-family: Bebas Neue;
     font-size: 24px;
@@ -12,6 +13,11 @@
     text-align: left;
     color: #313037;
 
+}
+
+.card > a {
+    text-decoration: none;
+    color: inherit;
 }
 .card__img {
     display: flex;
@@ -26,6 +32,7 @@
 }
 
 .card__title {
+    display: block;
     height: 64px;
     margin-top: 20px;
 }
@@ -37,5 +44,16 @@
     font-size: 16px;
     line-height: 24px;
     color: #A8A8A8;
-    overflow: hidden;
+    margin-bottom: 25px;
+}
+
+.card__stars {
+    position: absolute;
+    left: 232px;
+    top: 426px;
+}
+
+.card__star {
+    color: #313037;
+    font-size: 18px;
 }

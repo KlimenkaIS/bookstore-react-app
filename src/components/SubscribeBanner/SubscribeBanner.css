@@ -1,0 +1,63 @@
+.banner {
+    box-sizing: border-box;
+    width: 100%;
+    height: 288px;
+    background-color: #F4EEFD;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    padding: 56px 64px;
+    margin-top: 72px;
+}
+
+.banner__title {
+    font-family: Bebas Neue;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+}
+
+.banner__subtitle {
+    font-family: DIN Pro;
+    font-size: 18px;
+    font-weight: 400;
+    line-height: 28px;
+    text-align: left;
+
+}
+
+.banner-form {
+    display: flex;
+}
+
+.banner-form__input {
+    border: 0;
+    font-family: DIN Pro;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #A8A8A8;
+    padding: 16px 0 16px 24px;
+    width: 903px;
+}
+
+.banner-form__input:focus {
+    background-color: #F7F7F7;
+    outline: none;
+}
+
+.banner-for__button {
+    font-family: Bebas Neue;
+    font-size: 24px;
+    font-weight: 500;
+    line-height: 24px;
+    letter-spacing: 0.05em;
+    text-align: center;
+    color: #FFFFFF;
+    background-color: #313037;
+    width: 169px;
+    height: 56px;
+    cursor: pointer;
+}

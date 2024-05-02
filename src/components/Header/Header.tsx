@@ -1,33 +1,43 @@
 import './Header.css'
 import { IoIosSearch } from "react-icons/io";
-import { CiHeart } from "react-icons/ci";
-import { TbShoppingBag } from "react-icons/tb";
+import { TbShoppingBag, TbShoppingBagExclamation, TbHeartExclamation, TbHeart } from "react-icons/tb";
 import { FiUser } from "react-icons/fi";
+import { Link } from 'react-router-dom';
+import { IInput } from '../../interfaces/interfaces';
+import { useSelector } from 'react-redux';
 
-interface IInput {
-    inputValue: string;
-    setInputValue: React.ChangeEventHandler<HTMLInputElement>;
-    handlerSubmit: React.KeyboardEventHandler<HTMLInputElement>;
-}
 
-function Header ({inputValue, setInputValue, handlerSubmit}: IInput) {
-    return ( 
+
+function Header({ inputValue, setInputValue, handlerSubmit }: IInput) {
+    const favorites = useSelector((state: any) => state.bookstore.favorites)
+    const cart = useSelector((state: any) => state.bookstore.cart)
+
+
+    return (
         <>
-        <header className="header">
-            <div className="header__title">BOOKSTORE</div>
-            <form className="header-input">
-                <input className='header-input__item' type='text' placeholder='Search'  value = {inputValue} onKeyDown={handlerSubmit} onChange={setInputValue}></input>
-                <span className="header-input__icon"><IoIosSearch/></span>
-            </form>
-            <div className="header-icons">
-                <div className="header-icons__item"><CiHeart /></div>
-                <div className="header-icons__item"><TbShoppingBag/></div>
-                <div className="header-icons__item"><FiUser/></div>
-            </div>
+            <header className="header">
+                <Link to='/'>
+                    <div className="header__title">BOOKSTORE</div>
+                </Link>
+                <form className="header-input">
+                    <input className='header-input__item' type='text' placeholder='Search' value={inputValue} onKeyDown={handlerSubmit} onChange={setInputValue}></input>
+                    {inputValue.length < 50 ? <IoIosSearch className="header-input__icon" /> : null}
+                </form>
+                <div className="header-icons">
+                    <Link to='/favorites'>
+                        <div className="header-icons__item" style={favorites.length === 0 ? {display: "flex"}:{display: 'none'}}><TbHeart /></div>
+                        <div className="header-icons__item" style={favorites.length > 0? {display: "flex"}:{display: 'none'}}><TbHeartExclamation /></div>
+                    </Link>
+                    <Link to='/cart'>
+                        <div className="header-icons__item" style={cart.length === 0 ? {display: "flex"}:{display: 'none'}}><TbShoppingBag /></div>
+                        <div className="header-icons__item" style={cart.length > 0 ? {display: "flex"}:{display: 'none'}}><TbShoppingBagExclamation /></div>
+                    </Link>
+                    <div className="header-icons__item"><FiUser /></div>
+                </div>
 
-        </header>
+            </header>
         </>
     );
 }
 
-export default Header ;
+export default Header;

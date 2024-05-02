@@ -1,0 +1,90 @@
+.card-alternate {
+    height: 241px;
+    display: flex;
+    justify-content: space-between;
+    font-family: Bebas Neue;
+    font-size: 24px;
+    font-weight: 700;
+    line-height: 32px;
+    text-align: left;
+    color: #313037;
+    width: 100%;
+    border-bottom: 1px solid #F4EEFD;
+    margin: 48px 0;
+}
+
+.card-alternate-title-and-subtitle {
+    margin-left: 32px;
+    width: 446px;
+}
+
+.card-alternate-title-and-subtitle>a {
+    text-decoration: none;
+    color: inherit;
+}
+
+.card-alternate__img {
+    width: 256px;
+    height: 192.18px;
+    background-color: #F4EEFD;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.card-alternate__img>img {
+    width: 163.9px;
+    height: 191.46px;
+    left: 46px;
+    gap: 0px;
+    opacity: 0px;
+}
+
+.card-alternate__subtitle {
+    font-family: Raleway;
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 24px;
+    text-align: left;
+    color: #A8A8A8;
+}
+
+.card-alternate__price {
+    display: inline-block;
+    margin: 66px 113px 115px 130px;
+    font-family: Bebas Neue;
+    font-size: 40px;
+    font-weight: 700;
+    line-height: 60px;
+    text-align: left;
+
+}
+
+.card-alternate__cross {
+    width: 56px;
+    height: 56px;
+    background: inherit;
+    border: none;
+    color: #313037;
+    font-weight: 700;
+    margin: 69px 0 117px 0;
+    cursor: pointer;
+}
+
+.card-alternate__heart {
+    color: #FC857F;
+    font-size: 18px;
+}
+
+
+.card-alternate-price-bar {
+    display: flex;
+    justify-content: space-between;
+    width: 352px;
+    margin-top: 24px;
+}
+
+.card-alternate-price-bar__star {
+    color: #313037;
+    font-size: 18px;
+}

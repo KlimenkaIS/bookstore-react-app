@@ -1,0 +1,13 @@
+.favorites {
+    font-family: Bebas Neue;
+    font-weight: 700;
+    text-align: left;
+    color: #313037;
+}
+.favorites__title {
+    font-size: 56px;
+    line-height: 64px;
+    font-family: Bebas Neue;
+    font-weight: 700;
+    color: #313037;
+}
